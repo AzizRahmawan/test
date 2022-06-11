@@ -16,7 +16,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $count1 = Pegawai::count();
+        //$count1 = Pegawai::count();
         $count2 = Siswa::count();
         $count3 = Sarana::count();
         $count4 = Event::count();
