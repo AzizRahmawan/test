@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Auth::routes([
     'register' => false, // Register Routes...
@@ -57,7 +57,7 @@ Route::group(['namespace'=>'Backend'], function () {
 });
 
 Route::group(['namespace'=>'Frontend'], function () {
-    Route::prefix('/')->group(function () {
+    Route::prefix('/home')->group(function () {
         Route::resource('/', '\App\Http\Controllers\Frontend\IndexController');
         Route::resource('/fprofile', '\App\Http\Controllers\Frontend\FProfileController');
         Route::resource('/fkontak', '\App\Http\Controllers\Frontend\FKontakController');
@@ -69,8 +69,8 @@ Route::group(['namespace'=>'Frontend'], function () {
         Route::get('/fkontak', '\App\Http\Controllers\Frontend\FKontakController@index')->name('kontakpage');
         Route::get('/fsarpras', '\App\Http\Controllers\Frontend\FSaranaController@index')->name('saranapage');
         Route::get('/fpegawai', '\App\Http\Controllers\Frontend\FPegawaiController@index')->name('pegawaipage');
-        Route::get('/fevent', '\App\Http\Controllers\Frontend\FEventController@index')->name('eventpage');   
-        Route::get('/fevent/{id}', '\App\Http\Controllers\Frontend\FEventController@show')->name('fevent');  
+        Route::get('/fevent', '\App\Http\Controllers\Frontend\FEventController@index')->name('eventpage');
+        Route::get('/fevent/{id}', '\App\Http\Controllers\Frontend\FEventController@show')->name('fevent');
         Route::get('/fsarpras/{id}', '\App\Http\Controllers\Frontend\FSaranaController@show')->name('fsarpras');
 
     });
