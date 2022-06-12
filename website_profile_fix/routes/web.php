@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', '\App\Http\Controllers\Backend\IndexController');
+Route::get('/', '\App\Http\Controllers\Backend\IndexController@index');
 
 Auth::routes([
     'register' => false, // Register Routes...
