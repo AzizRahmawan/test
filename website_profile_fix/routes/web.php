@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('backend.index');
-});
+Route::get('/', '\App\Http\Controllers\Backend\IndexController');
 
 Auth::routes([
     'register' => false, // Register Routes...
