@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', '/App/Http/Controllers/Backend/IndexController@index');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Auth::routes([
     'register' => false, // Register Routes...
@@ -31,7 +33,7 @@ Route::get('/front', function () {
 });
 
 Route::group(['namespace'=>'Backend'], function () {
-    Route::prefix('dashboard')->group(function () {
+    Route::prefix('/')->group(function () {
         Route::resource('/', '\App\Http\Controllers\Backend\IndexController');
         Route::resource('/carousel', '\App\Http\Controllers\Backend\CarouselController');
         Route::resource('/pegawai', '\App\Http\Controllers\Backend\PegawaiController');
