@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return redirect('login');
+    return view('backend.index');
 });
 
 Auth::routes([
