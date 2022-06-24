@@ -28,12 +28,12 @@ Auth::routes([
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/front', function () {
-    return redirect('/home');
+Route::get('/', function () {
+    return redirect('/');
 });
 
 Route::group(['namespace'=>'Backend'], function () {
-    Route::prefix('/')->group(function () {
+    Route::prefix('/dashboard')->group(function () {
         Route::resource('/', '\App\Http\Controllers\Backend\IndexController');
         Route::resource('/carousel', '\App\Http\Controllers\Backend\CarouselController');
         Route::resource('/pegawai', '\App\Http\Controllers\Backend\PegawaiController');
@@ -57,7 +57,7 @@ Route::group(['namespace'=>'Backend'], function () {
 });
 
 Route::group(['namespace'=>'Frontend'], function () {
-    Route::prefix('/home')->group(function () {
+    Route::prefix('/')->group(function () {
         Route::resource('/', '\App\Http\Controllers\Frontend\IndexController');
         Route::resource('/fprofile', '\App\Http\Controllers\Frontend\FProfileController');
         Route::resource('/fkontak', '\App\Http\Controllers\Frontend\FKontakController');
