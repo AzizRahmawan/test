@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
-        //View::share('carouselview', Carousel::all());
-        //View::share('contactview', Kontak::all());
+        View::share('carouselview', Carousel::all());
+        View::share('contactview', Kontak::all());
     }
 }
